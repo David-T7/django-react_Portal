@@ -1,0 +1,15 @@
+body{
+    background-color: #212529;
+}
+.light-dark-bg{
+    background-color: #343a40;
+}
+
+#root{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px ;
+}

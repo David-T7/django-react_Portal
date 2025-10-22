@@ -1,11 +1,12 @@
-import { useState } from 'react'
-
-
+import Header from "./components/header"
+import Home from "./components/home"
+import Footer from "./components/footer"
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+    <Header />
+    <Home />
+    <Footer />
     </>
   )
 }
