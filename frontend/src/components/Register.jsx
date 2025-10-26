@@ -1,5 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 const Register = () => {
   const [sendingData, setSendingData] = useState(false)
   const  [formData, setFormData] = useState({
@@ -26,7 +28,9 @@ const Register = () => {
       setSuccsess(false)
       console.error('There was an error!', error.response.data);
     }
+    finally{
     setSendingData(false)
+    }
   }
   return (
     <>
@@ -48,7 +52,7 @@ const Register = () => {
             <small>{errors.password && <div className="text-danger">{errors.password}</div>}</small>
             </div>
             {succsess && <div className="alert alert-success">Registration successful! You can now log in.</div>}
-            <button type='submit' disabled={sendingData} className='btn btn-info d-block mx-auto'>{sendingData ? 'Registering...' : 'Register'}</button>
+            <button type='submit' disabled={sendingData} className='btn btn-info d-block mx-auto'>{sendingData && <FontAwesomeIcon icon={faSpinner} spin={sendingData} />}{sendingData ? 'Registering...' : 'Register'}</button>
             </form>
         </div>
         </div>
