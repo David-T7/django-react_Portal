@@ -27,7 +27,7 @@ const Login = () => {
       setIsLoggedIn(true);
       setErrors({})
       setError(false)
-      navigate('/');
+      navigate('/dashboard');
     }
     catch (error) {
       setErrors(error.response.data);
